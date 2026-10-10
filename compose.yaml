@@ -1,0 +1,12 @@
+
+services:
+  trip_planner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: trip_planner_app
+    env_file:
+      - ../.env
+    ports:
+      - "8051:8051"
+    restart: unless-stopped
